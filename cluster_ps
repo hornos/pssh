@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./cluster_cmd "ps aux | grep ${1} | grep -v grep" ${2}

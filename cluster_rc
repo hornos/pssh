@@ -1,0 +1,13 @@
+#!/bin/bash
+
+bn=$(basename $0)
+rc="${1:-gmond}"
+nodes="${3:-nodes}"
+action="${2:-restart}"
+opts="-i -v -p 1"
+
+if ! test -r "${nodes}" ; then
+  exit 1
+fi
+
+pssh ${opts} -h "${nodes}" "/etc/rc.d/${rc} ${action}"

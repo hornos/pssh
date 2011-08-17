@@ -1,0 +1,12 @@
+#!/bin/bash
+
+bn=$(basename $0)
+cmd="${1:-ls}"
+nodes="${2:-nodes}"
+opts="-i -v -p 1"
+
+if ! test -r "${nodes}" ; then
+  exit 1
+fi
+
+pssh ${opts} -h "${nodes}" "${cmd}"

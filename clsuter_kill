@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./cluster_cmd "killall ${1}" ${2}
